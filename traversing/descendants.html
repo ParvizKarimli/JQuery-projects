@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Traversing - Descendants</title>
+<style>
+div, div * {
+	display: block;
+	padding: 20px;
+	margin: 20px;
+	border: 5px solid black;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		// reset
+		$("div").find("*").css("border", "5px solid black");
+	
+		$("div").children().css("border", "5px solid red");
+	});
+	
+	$("#btn2").click(function(){
+		// reset
+		$("div").find("*").css("border", "5px solid black");
+		
+		// immediate child
+		$("div").children("#first").css("border", "5px solid red");
+	});
+	
+	$("#btn3").click(function(){
+		// no need to reset since all descendants of div will be indicated
+		
+		// all descendants
+		$("div").find("*").css("border", "5px solid red");
+	});
+});
+</script>
+</head>
+<body>
+<div>Ancestor (div)
+  <ul id="first">Direct Child (ul)
+    <li>Descendant (li)</li>
+  </ul>
+  
+  <ol>Direct Child (ol)
+    <li>Descendant (li)</li>
+  </ol>
+</div>
+
+<button id="btn1">Show immediate children of div</button>
+<button id="btn2">Show immediate child of div with id "first"</button>
+<button id="btn3">Show all descendants of div</button>
+</body>
+</html>

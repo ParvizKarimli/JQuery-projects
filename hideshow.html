@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Hide & Show</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function(){
+	$("#hide").click(function(){
+		$("pre").hide("slow");
+	});
+	
+	$("#show").click(function(){
+		$("pre").show("fast");
+	});
+	
+	$("#toggle").click(function(){
+		$("pre").toggle(1000);
+	});
+});
+</script>
+</head>
+<body>
+<pre>
+If you click on the hide button, I will disappear. 
+And if you click on the show button, I will reappear.
+</pre>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle <!-- between hide & show --></button>
+</body>
+</html>

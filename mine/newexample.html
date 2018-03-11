@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#hover").mouseenter(function(){
+		$("#panel").slideDown("slow");
+	});
+	
+	$("#hover").mouseleave(function(){
+		$("#panel").slideUp("slow");
+	});
+});
+</script>
+</head>
+<body>
+<p id="hover" style="width:120px;">Hover over here</p>
+<p id="panel" style="display: none">Hello world!</p>
+</body>
+</html>

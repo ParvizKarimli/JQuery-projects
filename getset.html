@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		alert("Text: " + $("#test").text());
+	});
+	
+	$("#btn2").click(function(){
+		alert("HTML: " + $("#test").html());
+	});
+	
+	$("#btn3").click(function(){
+		alert("Value: " + $("#input").val());
+	});
+	
+	$("#btn4").click(function(){
+		alert("Type Value: " + $("#input").attr("type"));
+	});
+	
+	/*$("#btn5").click(function(){
+		$("#test").text("Hello world!");
+	});*/
+	
+	$("#btn5").click(function(){
+		$("#test").text(function(i, origText){
+			return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+		});
+	});
+	
+	/*
+	$("#btn6").click(function(){
+		$("#test").html("<b>jQuery rocks!!</b>");
+	});*/
+	
+	$("#btn6").click(function(){
+		$("#test").html(function(i, origText){
+			return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+		});
+	});
+	
+	$("#btn7").click(function(){
+		$("#input").val("Dolly Duck");
+	});
+});
+
+</script>
+</head>
+<body>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+<p>Name: <input type="text" id="input" value="Mickey Mouse"></p>
+
+<p>
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+<button id="btn3">Show Value</button>
+<button id="btn4">Show Input Type Value</button>
+</p>
+
+<p>
+<button id="btn5">Set Text</button>
+<button id="btn6">Set HTML</button>
+<button id="btn7">Set Value</button>
+</p>
+
+</body>
+</html>

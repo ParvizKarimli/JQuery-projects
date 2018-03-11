@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery AJAX - Load</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$("div").load("demo.txt");
+	});
+	
+	$("#btn2").click(function(){
+		$("div").load("demo.txt #p1");
+	});
+	
+	$("#btn3").click(function(){
+		$("div").load("demo.txt", function(responseTxt, statusTxt, xhr){
+			if(statusTxt == "success") {
+				alert("External content loaded successfully!");
+			} else if(statusTxt == "error") {
+				alert("Error: " + xhr.status + ": " + xhr.statusText);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div>Let jQuery AJAX change this text.</div>
+
+<button id="btn1">Get External Content</button>
+<button id="btn2">Get External Content from the Specific Element</button>
+<button id="btn3">Get External Content with a Callback function</button>
+</body>
+</html>

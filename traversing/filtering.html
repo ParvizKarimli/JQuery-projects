@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Traversing - Filtering</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	// reset
+	$("button").click(function(){
+		$("p").css("color", "black");
+	});
+
+	$("#btn1").click(function(){
+		$("p").first().css("color", "red");
+	});
+	
+	$("#btn2").click(function(){
+		$("p").last().css("color", "red");
+	});
+	
+	$("#btn3").click(function(){
+		$("p").eq(1).css("color", "red");
+	});
+	
+	$("#btn4").click(function(){
+		$("p").filter(".intro").css("color", "red");
+	});
+	
+	$("#btn5").click(function(){
+		$("p").not(".intro").css("color", "red");
+	});
+});
+</script>
+</head>
+<body>
+<p>This is a paragraph without class name "intro".</p>
+<p class="intro">This is a paragraph with class name "intro".</p>
+<p class="intro">This is another paragraph with class name "intro".</p>
+<p>This is another paragraph without class name "intro"</p>
+
+<button id="btn1">Select first p</button>
+<button id="btn2">Select last p</button>
+<button id="btn3">Select second p</button>
+<button id="btn4">Select p elements with class "intro"</button>
+<button id="btn5">Select p elements without class "intro"</button>
+</body>
+</html>

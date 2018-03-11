@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Misc - noConflict</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+var jq = $.noConflict();
+jq(document).ready(function(){
+	jq("#btn1").click(function(){
+		jq("p").text("jQuery is still working!");
+	});
+});
+</script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<button id="btn1">Test jQuery</button>
+</body>
+</html>

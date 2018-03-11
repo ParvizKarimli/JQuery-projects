@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("p").mouseenter(function(){
+		$("div").slideDown("slow");
+	});
+	
+	$("p").mouseleave(function(){
+		$("div").slideUp("slow");
+	});
+});
+</script>
+<body>
+<p style="width:200px; background-color:yellow; text-align:center">Hover over it</p>
+<div style="display:none; width:200px; background-color:red; text-align:center;">Hello world!</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery AJAX - Get/Post</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$.get("demo_get.asp", function(data, status){
+			alert("Data: " + data + "\nStatus: " + status);
+		});
+	});
+	
+	$("#btn2").click(function(){
+		$.post(
+			"demo_post.asp", 
+			{
+				"name":"Donald Duck",
+				"city":"Duckburg"
+			},
+			function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
+			}
+		);
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn1">Send an HTTP GET request to a page and get the result back</button>
+<button id="btn2">Send an HTTP POST request to a page and get the result back</button>
+</body>
+</html>

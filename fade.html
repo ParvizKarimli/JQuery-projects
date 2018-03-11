@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Fade</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#in").click(function(){
+		$("#div1").fadeIn("fast");
+		$("#div2").fadeIn("slow");
+		$("#div3").fadeIn(500);
+	});
+	
+	$("#out").click(function(){
+		$("#div3").fadeOut(500);
+		$("#div2").fadeOut(750);
+		$("#div1").fadeOut(1000);
+	});
+	
+	$("#toggle").click(function(){
+		$("#div1").fadeToggle(1000);
+		$("#div2").fadeToggle(750);
+		$("#div3").fadeToggle(500);
+	});
+	
+	$("#to1").click(function(){
+		$("#div1").fadeTo(500, 0.5);
+		$("#div2").fadeTo(750, 0.5);
+		$("#div3").fadeTo(1000, 0.5);
+	});
+	
+	$("#to2").click(function(){
+		$("#div1").fadeTo(500, 1);
+		$("#div2").fadeTo(750, 1);
+		$("#div3").fadeTo(1000, 1);
+	});
+});
+</script>
+</head>
+<body>
+
+<p>Demonstrate fadeIn() with different parameters.</p>
+
+<button id="in">Click to fade in boxes</button>
+<button id="out">Click to fade out boxes</button>
+<button id="toggle">Click to fade in/out boxes</button>
+<button id="to1">Click to fade to 0.5 opacity</button>
+<button id="to2">Click to fade to 1 opacity</button>
+<br><br>
+
+<div id="div1" style="width:80px; height:80px; display:none; background-color:blue;"></div><br>
+<div id="div2" style="width:80px; height:80px; display:none; background-color:red;"></div><br>
+<div id="div3" style="width:80px; height:80px; display:none; background-color:green;"></div><br>
+
+</body>
+</html>

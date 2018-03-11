@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery CSS Method</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		alert("Background-color = " + $("p").css("background-color"));
+	});
+	
+	$("#btn2").click(function(){
+		$("p").css("background-color", "yellow");
+	});
+	
+	$("#btn3").click(function(){
+		$("p").css({"font-size":"200%", "font-weight":"bold"});
+	});
+});
+</script>
+<body>
+<p style="background-color:blue">This is the paragraph 1.</p>
+<p style="background-color:red">This is the paragraph 2.</p>
+<p style="background-color:green">This is the paragraph 3.</p>
+
+<button id="btn1">Return background-color of FIRST p</button>
+<button id="btn2">Set background-color of EVERY p</button>
+<button id="btn3">Set multiple properties for every p</button>
+</body>
+</html>

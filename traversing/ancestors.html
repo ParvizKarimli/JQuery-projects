@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Traversing - Ancestors</title>
+<style>
+div, div * {
+	padding: 20px;
+	margin: 20px;
+	display: block;
+	border: 5px solid black;
+}
+
+span {
+	border: 5px solid yellow;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		// reset all ancestors...
+		$("html").css("border", "none");
+		$("body").css("border", "none");
+		$("div").css("border", "5px solid black");
+		$("div").children().css("border", "5px solid black");
+		
+		// ...and the element itself
+		$("span").css("border", "5px solid yellow");
+		
+		// indicate the direct parent
+		$("span").parent().css("border", "5px solid green");
+	});
+	
+	$("#btn2").click(function(){
+		$("span").parents().css("border", "5px solid red");
+	});
+	
+	$("#btn3").click(function(){
+		// reset all ancestors...
+		$("html").css("border", "none");
+		$("body").css("border", "none");
+		$("div").css("border", "5px solid black");
+		$("div").children().css("border", "5px solid black");
+		
+		// ...and the element itself...
+		$("span").css("border", "5px solid yellow");
+		
+		// ...and the direct parent
+		$("span").parent().css("border", "5px solid black");
+		
+		// indicate the ancestors that are ul elements
+		$("span").parents("ul").css("border", "5px solid blue");
+	});
+	
+	$("#btn4").click(function(){
+		// reset all ancestors...
+		$("html").css("border", "none");
+		$("body").css("border", "none");
+		$("div").css("border", "5px solid black");
+		$("div").children().css("border", "5px solid black");
+		
+		// ...and the element itself...
+		$("span").css("border", "5px solid yellow");
+		
+		// ...and the direct parent
+		$("span").parent().css("border", "5px solid black");
+		
+		// indicate the ancestors that are ul elements
+		$("span").parentsUntil("div").css("border", "5px solid pink");
+	});
+});
+</script>
+</head>
+<body>
+<div>great-great-grandparent
+  <div>great-grandparent
+    <ul>grandparent
+	  <li>direct parent
+	    <span>descendant</span>
+	  </li>
+	</ul>
+  </div>
+</div>
+
+<button id="btn1">Show direct parent</button>
+<button id="btn2">Show all ancestors</button>
+<button id="btn3">Show only ancestors that are ul</button>
+<button id="btn4">Show all ancestors that are between span and div</button>
+</body>
+</html>

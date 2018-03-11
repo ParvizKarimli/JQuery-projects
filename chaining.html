@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Chaining</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+
+$(document).ready(function(){
+	$("p").click(function(){
+		$(this).css("color", "lime")
+			.slideUp()
+			.slideDown();
+	});
+});
+
+</script>
+</head>
+<body>
+
+<p style="font-size:150px; text-align:center">jQuery is fun!!</p>
+
+</body>
+</html>

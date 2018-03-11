@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Dimensions</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		alert("Width: " + $("p").width() + "; Inner width: " + $("p").innerWidth() + 
+		"; Outer width: " + $("p").outerWidth());
+	});
+});
+</script>
+</head>
+<body>
+<p style="border:5px solid red; outline:2px dashed blue; padding:15px; margin:10px;">This is a paragraph.</p>
+<button>Get Dimensions</button>
+</body>
+</html>

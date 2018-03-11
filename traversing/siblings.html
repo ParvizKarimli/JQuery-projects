@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Traversing - Siblings</title>
+<style>
+body :not(button) {
+	padding: 20px;
+	margin: 20px;
+	border: 5px solid black;
+	display: block;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		// all siblings of h1
+		$("h1").siblings().css("border", "5px solid red");
+	});
+	
+	$("#btn2").click(function(){
+		// reset
+		$("h1").siblings().css("border", "5px solid black");
+		
+		// sibling of h1 that are p
+		$("h1").siblings("span").css("border", "5px solid red");
+	});
+	
+	$("#btn3").click(function(){
+		// reset
+		$("h1").siblings().css("border", "5px solid black");
+		
+		// next sibling of h1
+		$("h1").next().css("border", "5px solid red");
+	});
+	
+	$("#btn4").click(function(){
+		// reset
+		$("h1").siblings().css("border", "5px solid black");
+		
+		// all next siblings of p
+		$("p").nextAll().css("border", "5px solid red");
+	});
+	
+	$("#btn5").click(function(){
+		// reset
+		$("h1").siblings().css("border", "5px solid black");
+		
+		// all next siblings of h1 until h2
+		$("h1").nextUntil("h2").css("border", "5px solid red");
+	});
+	
+	// There are also prev(), prevAll() and prevUntil() methods
+	// which work just like the next methods above
+	// but backwards along siblings in the DOM tree instead of forward.
+});
+</script>
+</head>
+<body>
+<div>
+  <h1>h1</h1>
+  <p>p</p>
+  <span>span</span>
+  <span>span</span>
+  <h2>h2</h2>
+</div>
+
+<button id="btn1">Show siblings of h1</button>
+<button id="btn2">Show siblings of h1 that are span</button>
+<button id="btn3">Show next sibling of h1</button>
+<button id="btn4">Show all next siblings of p</button>
+<button id="btn5">Show all next siblings of h1 until h2</button>
+</body>
+</html>

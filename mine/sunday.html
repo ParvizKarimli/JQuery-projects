@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("p").mouseenter(function(){
+		$("span").slideDown(1000);
+	});
+	
+	$("p").mouseleave(function(){
+		$("span").slideUp(2000);
+	});
+});
+</script>
+</head>
+<body>
+<p style="background-color:red;text-align:center;width:200px;">Hover over for greetings</p>
+<span style="background-color:lime;text-align:center;width:200px;font-size:50px;display:none;">
+Hello, world!</span>
+</body>
+</html>

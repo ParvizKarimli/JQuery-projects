@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>jQuery Stop</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+
+$(document).ready(function(){
+	$("p").click(function(){
+		$(this).toggle(3000);
+	});
+	
+	$("button").click(function(){
+		$("p").stop();
+	});
+});
+
+</script>
+</head>
+<body>
+
+<button>Stop hiding/showing</button>
+<p style="background:lime; height:200px; width:200px;">Click to hide/show</p>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+<h1>jQuery makes AJAX cross-browser compatible.</h1>
+<p id="p1">This is a paragraph</p>
